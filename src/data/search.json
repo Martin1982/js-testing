@@ -1,8 +1,46 @@
 {
     "results": [
-        "Black Abbey POTUS 44",
-        "Yazoo Sly Rye Porter",
-        "Jackelope Bearwalker",
-        "Turtle Anarchy Stout"
+        {
+            "Brewery": "Black Abbey",
+            "Beer": "POTUS 44",
+            "abv": 5.5,
+            "rating": 5
+        },
+        {
+            "Brewery": "Yazoo",
+            "Beer": "Sly Rye Porter",
+            "abv": 5.7,
+            "rating": 3
+        },
+        {
+            "Brewery": "Jackelope",
+            "Beer": "Bearwalker Maple Brown",
+            "abv": 5.1,
+            "rating": 4
+        },
+        {
+            "Brewery": "Turtle Anarchy",
+            "Beer": "Portly Stout",
+            "abv": 6.2,
+            "rating": 3
+        },
+        {
+            "Brewery": "Yazoo",
+            "Beer": "Onward Stout",
+            "abv": 3.8,
+            "rating": 2
+        },
+        {
+            "Brewery": "Black Abbey",
+            "Beer": "The Fortress",
+            "abv": 6.2,
+            "rating": 4
+        },
+        {
+            "Brewery": "Tennessee Brew Works",
+            "Beer": "Country Roots",
+            "abv": 5.5,
+            "rating": null
+        }
     ]
 }

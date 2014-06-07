@@ -11,12 +11,12 @@ $(document).ready(function() {
 
         $.ajax({
             url: "data/search.json",
-            data: { "query": query },
+            data: { "query": query, limit: 7 },
             dataType: "json",
             success: function(data) {
                 data.results.forEach(function(item) {
                     $("#search-results")
-                        .append("<li> " + item + " </li>");
+                        .append("<li> " + item.Beer + " </li>");
                 });
             },
             error: function() {
