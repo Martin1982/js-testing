@@ -1,0 +1,14 @@
+
+#messages p {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 0.2em 1em;
+}
+
+#messages .error {
+	color: #933;
+}
+
+#content {
+	min-height: 10em;
+}

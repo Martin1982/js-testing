@@ -9,7 +9,7 @@ however, the libraries used (jQuery and QUnit) have their own licesnes which you
 
 Clone the repo, refactor the code, and start writing tests!
 
-You can find the [conference session slides](http://bit.ly/testing-js) online and refer to them for 
+You can find the [conference session slides](#) online and refer to them for 
 information on general JavaScript testing principles. There is a branch named `final-solution` 
 which you can checkout to see how I refactored the code and implemented tests, but note that this 
 solution was intentionally simple and by no means everything you could do.
