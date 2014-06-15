@@ -12,3 +12,10 @@
 #content {
 	min-height: 10em;
 }
+
+#search-results .favorite-icon {
+    width: 1.3em;
+    position: relative;
+    top: 0.2em;
+    cursor: pointer;
+}

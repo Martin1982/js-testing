@@ -15,8 +15,18 @@ $(document).ready(function() {
             dataType: "json",
             success: function(data) {
                 data.results.forEach(function(item) {
+                    var img = "assets/star-empty.png";
+
+                    if (item.favorite) {
+                        img = "assets/star-filled.png";
+                    }
+
                     $("#search-results")
-                        .append("<li> " + item.Beer + " </li>");
+                        .append(
+                            "<li data-beerid='" + item.id + "'> " + item.Beer + 
+                            " <img class='favorite-icon' src='" + img + "'>" + 
+                            "</li>"
+                        );
                 });
             },
             error: function() {
