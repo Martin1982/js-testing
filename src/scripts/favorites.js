@@ -4,8 +4,7 @@ jk.favoriteInit = function(list, trigger) {
     var $list = $(list);
 
     if (!$list.length) {
-        jk.notify("Sorry, but there was a problem initializing the favorites functionality.");
-        return;
+        throw new Error("Sorry, but there was a problem initializing the favorites functionality.");
     }
 
     $list.on("click", trigger, function favoriteClickHandler(e) {
