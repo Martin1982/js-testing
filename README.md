@@ -16,6 +16,12 @@ solution was intentionally simple and by no means everything you could do.
 
 Feel free to contact me with any questions!
 
+### A note on functionality...
+
+This sample project has no server-side code, so the "search" functionality simply 
+retrieves an array of results from a JSON file. It does not matter what you enter 
+in the search field!
+
 ## Author
 
 Jordan Kasper (@jakerella)
