@@ -6,8 +6,7 @@ $(document).ready(function() {
             beerId = Number($el.data("beerid"));
 
         if (!beerId) {
-            $("#messages").append("<p class='error'>Please select a valid beer!</p>");
-            return;
+            throw new Error("Please select a valid beer!");
         }
 
         $.ajax({
