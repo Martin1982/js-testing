@@ -32,11 +32,11 @@ jk.doSearch = function(query, callback) {
         url: "data/search.json",
         data: { "query": query, limit: 7 },
         dataType: "json",
-        success: function(data) {
+        success: function searchSuccessHandler(data) {
             jk.handleSearchResults(data.results);
             callback(data.results);
         },
-        error: function() {
+        error: function searchErrorHandler() {
             jk.notify("Sorry, but the search failed!");
             callback(null);
         }
@@ -54,7 +54,7 @@ jk.handleSearchResults = function(results) {
         return;
     }
 
-    results.forEach(function(item) {
+    results.forEach(function searchResultLoop(item) {
         var img = "assets/star-empty.png";
 
         if (item.favorite) {
@@ -63,8 +63,8 @@ jk.handleSearchResults = function(results) {
 
         jk.$SEARCH_RESULTS
             .append(
-                "<li data-beerid='" + item.id + "'> " + item.Beer + 
-                " <img class='favorite-icon' src='" + img + "'>" + 
+                "<li> " + item.Beer + 
+                " <img class='favorite-icon' src='" + img + "' data-beerid='" + item.id + "'>" + 
                 "</li>"
             );
     });
