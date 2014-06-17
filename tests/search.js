@@ -216,4 +216,4 @@ QUnit.test("correct results in element", function(assert) {
     assert.equal($("#search-results li:eq(0) img").attr("src"), "assets/star-empty.png", "Non-favorite result (1) has correct image");
     assert.equal($("#search-results li:eq(1) img").attr("src"), "assets/star-filled.png", "Favorite result has correct image");
     assert.equal($("#search-results li:eq(2) img").attr("src"), "assets/star-empty.png", "Non-favorite result (3) has correct image");
-})
+});
