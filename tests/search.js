@@ -164,6 +164,56 @@ QUnit.asyncTest("server error", function(assert) {
 QUnit.module("Search Results", {
     setup: function() {
         mockNotify();
+        jk._old_$SEARCH_RESULTS = jk.$SEARCH_RESULTS;
+        jk.$SEARCH_RESULTS = $("#search-results");
+    },
+    teardown: function() {
+        jk.$SEARCH_RESULTS = jk._old_$SEARCH_RESULTS;
     }
 });
 
+QUnit.test("undefined input", function(assert) {
+    jk.handleSearchResults();
+    assert.equal(jk.notify.callCount, 1, "The notification method was called on error");
+});
+
+QUnit.test("null results", function(assert) {
+    jk.handleSearchResults(null);
+    assert.equal(jk.notify.callCount, 1, "The notification method was called on error");
+});
+
+QUnit.test("no results", function(assert) {
+    jk.handleSearchResults([]);
+    assert.equal(jk.notify.callCount, 1, "The notification method was called on error");
+});
+
+QUnit.test("no results node", function(assert) {
+    // hold onto this so we can reset it
+    var resultsNode = jk.$SEARCH_RESULTS;
+    jk.$SEARCH_RESULTS = null;
+
+    jk.handleSearchResults(["one", "two"]);
+    assert.equal(jk.notify.callCount, 1, "The notification method was called on error");
+
+    // reset the results node
+    jk.$SEARCH_RESULTS = resultsNode;
+});
+
+QUnit.test("no results added with bad data", function(assert) {
+    jk.handleSearchResults(["one", "two"]);
+    assert.equal(jk.notify.callCount, 0, "The notification method was NOT called");
+    assert.equal($("#search-results li").length, 0, "Results node has correct number of entries (0)");
+});
+
+QUnit.test("correct results in element", function(assert) {
+    jk.handleSearchResults([
+        { id: 1, Beer: "Foo", favorite: false },
+        { id: 2, Beer: "Bar", favorite: true },
+        { id: 3, Beer: "Baz", favorite: false }
+    ]);
+    assert.equal(jk.notify.callCount, 0, "The notification method was NOT called");
+    assert.equal($("#search-results li").length, 3, "Results node has correct number of entries");
+    assert.equal($("#search-results li:eq(0) img").attr("src"), "assets/star-empty.png", "Non-favorite result (1) has correct image");
+    assert.equal($("#search-results li:eq(1) img").attr("src"), "assets/star-filled.png", "Favorite result has correct image");
+    assert.equal($("#search-results li:eq(2) img").attr("src"), "assets/star-empty.png", "Non-favorite result (3) has correct image");
+})
