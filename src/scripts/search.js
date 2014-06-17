@@ -56,6 +56,11 @@ jk.handleSearchResults = function(results) {
     }
 
     results.forEach(function searchResultLoop(item) {
+        if (!item.id || !item.Beer) {
+            // Can't use this entry
+            return;
+        }
+
         var img = "assets/star-empty.png";
 
         if (item.favorite) {
