@@ -15,6 +15,10 @@ module.exports = function(grunt) {
             js: {
                 files: [ "src/**/*.js" ],
                 tasks: [ "qunit" ]
+            },
+            tests: {
+                files: [ "tests/**/*.js", "tests/**/*.html" ],
+                tasks: [ "qunit" ]
             }
         }
 
