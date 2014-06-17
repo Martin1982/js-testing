@@ -9,6 +9,7 @@ jk.searchInit = function(form, input, results) {
     jk.$SEARCH_RESULTS = $(results);
 
     if (!$form.length || !$input.length || !jk.$SEARCH_RESULTS.length) {
+        jk.$SEARCH_RESULTS = null;
         jk.notify("Sorry, but there was a problem initializing the search.");
         return;
     }
