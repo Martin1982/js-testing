@@ -16,6 +16,7 @@ jk.favoriteInit = function(list, trigger) {
 jk.toggleFavorite = function($el, callback) {
     var beerId;
 
+    $el = $($el); // ensure element is a jQuery wrapped node
     callback = (callback || $.noop);
 
     if (!$el || !$el.length) {
@@ -48,5 +49,11 @@ jk.toggleFavorite = function($el, callback) {
 
 jk.toggleFavoriteIcon = function($el, isFavorite) {
     var img = (isFavorite) ? "assets/star-filled.png" : "assets/star-empty.png";
+    
+    // ensure element is a jQuery wrapped node or fail silently
+    $el = $($el);
+    if (!$el || !$el.length || !$el.is("img")) { return false; }
+
     $el.attr("src", img);
+    return img;
 };
