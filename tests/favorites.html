@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+      <link rel="stylesheet" href="vendor/qunit-1.14.0.css" />
+  </head>
+  <body>
+    <div id="qunit"></div>   <!-- required! -->
+    <div id="qunit-fixture">
+      <!-- HTML to be reset for each test -->
+      <ul id="list">
+        <li>Foo<img src="" data-beerid="1"></li>
+        <li>Bar<img src="" data-beerid="2"></li>
+        <li>Baz<img src="" data-beerid="3"></li>
+      </ul>
+    </div>
+
+    <script src="vendor/qunit-1.14.0.js"></script>
+    <script> // QUnit options (via QUnit.config...) </script>
+
+    <script src="../src/scripts/vendor/jquery-1.11.1.min.js"></script>
+    <script src="vendor/jquery.mockjax-1.5.3.js"></script>
+    <script src="../src/scripts/favorites.js"></script>
+
+    <script src="favorites.js"></script>
+  </body>
+</html>

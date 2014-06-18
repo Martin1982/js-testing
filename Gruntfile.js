@@ -8,7 +8,8 @@ module.exports = function(grunt) {
                     urls: [ "tests/core.html" ]
                 }
             },
-            search: [ "tests/search.html" ] // second target & single option
+            search: [ "tests/search.html" ],       // second target & single option
+            favorites: [ "tests/favorites.html" ]  // third target
         },
 
         watch: {
